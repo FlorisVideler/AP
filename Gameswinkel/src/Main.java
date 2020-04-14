@@ -54,5 +54,30 @@ public class Main {
         System.out.println("p2: " + p2.toString());
 
         System.out.println("p3: " + p3.toString());
+
+        if (p1.verkoop(g1, p3)) {
+            System.out.println("p1 verkoopt g1 aan p3: gelukt");
+        }else {
+            System.out.println("p1 verkoopt g1 aan p3: niet gelukt");
+        }
+
+        if (p1.verkoop(g1, p3)) {
+            System.out.println("p1 verkoopt g1 aan p3: gelukt");
+        }else {
+            System.out.println("p1 verkoopt g1 aan p3: niet gelukt");
+        }
+
+        if (p2.verkoop(g1, p1)) {
+            System.out.println("p2 verkoopt g1 aan p1: gelukt");
+        }else {
+            System.out.println("p2 verkoopt g1 aan p1: niet gelukt");
+        }
+
+        System.out.println("p1: " + p1.toString());
+
+        System.out.println("p2: " + p2.toString());
+
+        System.out.println("p3: " + p3.toString());
+
     }
 }

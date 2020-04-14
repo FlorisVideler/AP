@@ -25,6 +25,22 @@ public class Persoon {
         }
     }
 
+    public boolean verkoop(Game game, Persoon persoon) {
+        if (persoon.budget < game.huidigePrijs) {
+            return false;
+        }else {
+            if (persoon.games.contains(game) || !games.contains(game)) {
+                return false;
+            }else {
+                persoon.budget -= game.huidigePrijs;
+                budget += game.huidigePrijs;
+                games.remove(game);
+                persoon.games.add(game);
+                return true;
+            }
+        }
+    }
+
     public String toString() {
         String txt = naam + " heeft een budget van €" + budget + " en bezit de volgende games:\n";
         if (games.size() > 0) {
