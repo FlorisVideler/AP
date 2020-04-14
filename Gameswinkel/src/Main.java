@@ -48,5 +48,11 @@ public class Main {
         }else {
             System.out.println("p3 koopt g3: niet gelukt");
         }
+
+        System.out.println("p1: " + p1.toString());
+
+        System.out.println("p2: " + p2.toString());
+
+        System.out.println("p3: " + p3.toString());
     }
 }
