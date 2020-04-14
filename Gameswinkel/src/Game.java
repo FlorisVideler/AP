@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 public class Game {
     String naam;
     int releaseJaar;
@@ -8,7 +10,9 @@ public class Game {
         naam = gameNaam;
         releaseJaar = gameReleaseJaar;
         nieuwPrijs = gameNieuwPrijs;
-        double kortingsDouble = (100.0 - (kortingPerJaar * releaseJaar)) / 100.0;
+        int yearsSinceRelease = LocalDate.now().getYear() - releaseJaar;
+        double kortingsDouble = (100.0 - (kortingPerJaar * yearsSinceRelease)) / 100.0;
         huidigePrijs = nieuwPrijs * kortingsDouble;
+
     }
 }

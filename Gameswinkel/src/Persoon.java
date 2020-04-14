@@ -9,7 +9,7 @@ public class Persoon {
         budget = persoonBudget;
     }
 
-    public boolean koop(Game game) {
+    public Boolean koop(Game game) {
         if (games.contains(game)) {
             return false;
         }else {
