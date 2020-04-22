@@ -1,28 +1,34 @@
 import java.util.ArrayList;
 
 public class Server {
-    private String locatie;
-    private String naam;
-    private ArrayList<Gebruiker> gebruikers = new ArrayList<Gebruiker>();
-    public Server (String locatie, String naam, Gebruiker maker) {
-        this.locatie = locatie;
+    ArrayList<Gebruiker> gebruikers = new ArrayList<Gebruiker>();
+    ArrayList<Kanaal> kanalen = new ArrayList<Kanaal>();
+    String naam;
+
+    public Server(String naam){
         this.naam = naam;
-        this.gebruikers.add(maker);
     }
 
-    public String getLocatie() {
-        return locatie;
+    public Kanaal maakKanaal(String naam, String type, int limit) {
+        Kanaal nieuwKanaal = new Kanaal(naam, type, limit);
+        kanalen.add(nieuwKanaal);
+        return nieuwKanaal;
     }
 
-    public void setLocatie(String locatie) {
-        this.locatie = locatie;
+    public void verwijderKanaal(Kanaal kanaal) {
+        kanalen.remove(kanaal);
     }
 
-    public String getNaam() {
-        return naam;
+    public void joinServer(Gebruiker gebruiker) {
+        gebruikers.add(gebruiker);
     }
 
-    public void setNaam(String naam) {
-        this.naam = naam;
+    @Override
+    public String toString() {
+        String gebruikersString = "";
+        for (Gebruiker g : gebruikers) {
+            gebruikersString += "\n" + g.gebruikersnaam;
+        }
+        return "De server: '" + naam + "', heeft " + gebruikers.size() + " gebruikers en " + kanalen.size() + " kanalen. De leden zijn:" + gebruikersString;
     }
 }
