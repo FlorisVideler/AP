@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class VoiceCall implements Call {
     ArrayList<Gebruiker> gebruikers = new ArrayList<Gebruiker>();
