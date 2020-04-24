@@ -36,6 +36,6 @@ public class VideoCall implements Call{
         for (Gebruiker g : gebruikers) {
             gebruikersString += "\n" + g.gebruikersnaam;
         }
-        return "";
+        return String.format("Deze video call heeft %s gebruikers erin zitten, dat zijn: %s", gebruikers.size(), gebruikersString);
     }
 }

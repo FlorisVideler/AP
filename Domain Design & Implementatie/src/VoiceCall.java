@@ -37,6 +37,6 @@ public class VoiceCall implements Call {
         for (Gebruiker g : gebruikers) {
             gebruikersString += "\n" + g.gebruikersnaam;
         }
-        return "Deze voice call heeft " + gebruikers.size() + " gebruikers erin zitten, dat zijn: " + gebruikersString;
+        return String.format("Deze voice call heeft %s gebruikers erin zitten, dat zijn: %s", gebruikers.size(), gebruikersString);
     }
 }

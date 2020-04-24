@@ -66,6 +66,6 @@ public class Gebruiker {
         for (Server s : servers) {
             serversString += "\n" + s.naam;
         }
-        return "De gebruiker '" + gebruikersnaam + "' zit in " + servers.size() + " servers. Dat zijn:" + serversString;
+        return String.format("De gebruiker '%s' zit in %s servers. Dat zijn: %s", gebruikersnaam, servers.size(), serversString);
     }
 }

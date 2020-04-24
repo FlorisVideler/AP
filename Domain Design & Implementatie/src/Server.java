@@ -49,6 +49,6 @@ public class Server {
         for (Gebruiker g : gebruikers) {
             gebruikersString += "\n" + g.gebruikersnaam;
         }
-        return "De server: '" + naam + "', heeft " + gebruikers.size() + " gebruikers en " + kanalen.size() + " kanalen. De leden zijn:" + gebruikersString;
+        return String.format("De server: '%s', heeft %s gebruikers en %s kanalen. De leden zijn: %s", naam, gebruikers.size(), kanalen.size(), gebruikersString);
     }
 }

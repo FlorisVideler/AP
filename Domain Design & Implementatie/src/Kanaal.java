@@ -50,6 +50,6 @@ public class Kanaal {
 
     @Override
     public String toString() {
-        return "Het kanaal '" + naam + "' is een " + type + " kanaal en er kunnen " + limit + " mensen in.";
+        return String.format("Het kanaal '%s' is een %s kanaal en er kunnen %s mensen in.", naam, type, limit);
     }
 }
