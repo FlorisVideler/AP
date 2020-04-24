@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Server {
     ArrayList<Gebruiker> gebruikers = new ArrayList<Gebruiker>();
@@ -29,6 +30,17 @@ public class Server {
 
     public void setNaam(String naam) {
         this.naam = naam;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null)
+            return false;
+        if (getClass() != o.getClass())
+            return false;
+        return false;
     }
 
     @Override

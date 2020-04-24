@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class VideoCall implements Call{
     ArrayList<Gebruiker> gebruikers = new ArrayList<Gebruiker>();
@@ -16,6 +17,18 @@ public class VideoCall implements Call{
     @Override
     public void disconnect(Gebruiker gebruiker) {
         gebruikers.remove(gebruiker);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null)
+            return false;
+        if (getClass() != o.getClass())
+            return false;
+        VideoCall videoCall = (VideoCall) o;
+        return Objects.equals(videoCall, videoCall.gebruikers);
     }
 
     public String toString() {

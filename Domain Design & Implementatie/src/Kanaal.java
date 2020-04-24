@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Kanaal {
     String naam;
     String type;
@@ -33,6 +35,17 @@ public class Kanaal {
 
     public void setLimit(int limit) {
         this.limit = limit;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null)
+            return false;
+        if (getClass() != o.getClass())
+            return false;
+        return false;
     }
 
     @Override

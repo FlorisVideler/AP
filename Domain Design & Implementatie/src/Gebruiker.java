@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Gebruiker {
     ArrayList<Server> servers = new ArrayList<Server>();
@@ -46,6 +47,18 @@ public class Gebruiker {
 
     public void addToVideo(VideoCall videoCall, Gebruiker gebruiker){
         videoCall.connect(gebruiker);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null)
+            return false;
+        if (getClass() != o.getClass())
+            return false;
+        Gebruiker gebruiker = (Gebruiker) o;
+        return Objects.equals(gebruikersnaam, gebruiker.gebruikersnaam);
     }
 
     public String toString() {

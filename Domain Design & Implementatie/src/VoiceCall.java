@@ -20,6 +20,18 @@ public class VoiceCall implements Call {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null)
+            return false;
+        if (getClass() != o.getClass())
+            return false;
+        VoiceCall voiceCall = (VoiceCall) o;
+        return Objects.equals(voiceCall, voiceCall.gebruikers);
+    }
+
+    @Override
     public String toString() {
         String gebruikersString = "";
         for (Gebruiker g : gebruikers) {
