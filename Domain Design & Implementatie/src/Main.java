@@ -13,5 +13,7 @@ public class Main {
         Gebruiker david = new Gebruiker("david");
         VoiceCall voice1 = zipperlemon.startVoice(david);
         System.out.println(voice1.toString());
+
+        System.out.println(zipperlemon.equals(zipperlemon));
     }
 }
