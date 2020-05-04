@@ -22,6 +22,6 @@ public class Main {
         s3.addTransition("B", s0);
 
         FiniteStateMachine fsm = new FiniteStateMachine(nodes, s0);
-        fsm.run("ABBAA");
+        ArrayList<Node> path = fsm.run("ABBAA");
     }
 }

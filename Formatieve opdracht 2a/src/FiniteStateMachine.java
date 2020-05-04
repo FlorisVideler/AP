@@ -11,22 +11,24 @@ public class FiniteStateMachine {
     }
 
 
-    public void run(String input){
+    public ArrayList<Node> run(String input){
+        ArrayList<Node> path = new ArrayList<Node>();
         Node lastNode = startNode;
+        path.add(startNode);
         System.out.println(String.format("Starting on node: %s", lastNode.name));
         for (char ch : input.toCharArray()) {
-//            System.out.println(ch);
             String inputChar = String.valueOf(ch);
-//            System.out.println(lastNode.doTransition(String.valueOf(ch)).name);
             Node newNode = lastNode.doTransition(inputChar);
             if (newNode == null){
                 System.out.println(String.format("Er is geen transition %s gevonden vanaf %s!", inputChar, lastNode.name));
                 break;
             }else {
                 System.out.println(String.format("%s --%s--> %s",lastNode.name, inputChar, newNode.name));
+                path.add(newNode);
             }
             lastNode = newNode;
         }
+        return path;
     }
 
     public String toString(){
