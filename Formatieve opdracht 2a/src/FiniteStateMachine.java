@@ -28,6 +28,7 @@ public class FiniteStateMachine {
             }
             lastNode = newNode;
         }
+        // Met het path wordt niets gedaan. Dit is meer voor uitbreiding. Als de prints buiten deze functie moeten gebeuren.
         return path;
     }
 
