@@ -7,8 +7,12 @@ public class MonteCarloMachine {
     Random rand = new Random();
 
     public MonteCarloMachine(ArrayList<MonteCarloMachineNode> nodes) {
-        this.nodes = nodes;
-        currentNode = nodes.get(0);
+        if(nodes.size() > 0){
+            this.nodes = nodes;
+            currentNode = nodes.get(0);
+        }else{
+            throw new IndexOutOfBoundsException();
+        }
     }
 
     public void run(){
