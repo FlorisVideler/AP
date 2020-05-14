@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         //Finite state machine
+        //Met de hand gemaakte nodes
         ArrayList<FiniteStateMachineNode> fsmNodes = new ArrayList<FiniteStateMachineNode>();
         FiniteStateMachineNode s0 = new FiniteStateMachineNode("s0");
         FiniteStateMachineNode s1 = new FiniteStateMachineNode("s1");
@@ -29,24 +30,35 @@ public class Main {
 
 
         //Monte carlo
+        //Dobbelsteen (1 laag)
+        MonteCarloMachine dice = new DiceOneLayer().buildDice(6);
+        dice.run();
+
+        //Loop om randomheid te testen
+        for (int i = 0; i < 10; i ++) {
+            MonteCarloMachine t = new DiceOneLayer().buildDice(19364);
+            t.run();
+        }
+
+        //Met de hand gemaakte nodes
         ArrayList<MonteCarloMachineNode> mcmNodes = new ArrayList<MonteCarloMachineNode>();
 
-        MonteCarloMachineNode node00 = new MonteCarloMachineNode("Node00", false);
+        MonteCarloMachineNode node00 = new MonteCarloMachineNode("Node00");
 
-        MonteCarloMachineNode node10 = new MonteCarloMachineNode("Node10", false);
-        MonteCarloMachineNode node11 = new MonteCarloMachineNode("Node11", false);
+        MonteCarloMachineNode node10 = new MonteCarloMachineNode("Node10");
+        MonteCarloMachineNode node11 = new MonteCarloMachineNode("Node11");
 
-        MonteCarloMachineNode node20 = new MonteCarloMachineNode("Node20", false);
-        MonteCarloMachineNode node21 = new MonteCarloMachineNode("Node21", false);
-        MonteCarloMachineNode node22 = new MonteCarloMachineNode("Node22", false);
-        MonteCarloMachineNode node23 = new MonteCarloMachineNode("Node23", false);
+        MonteCarloMachineNode node20 = new MonteCarloMachineNode("Node20");
+        MonteCarloMachineNode node21 = new MonteCarloMachineNode("Node21");
+        MonteCarloMachineNode node22 = new MonteCarloMachineNode("Node22");
+        MonteCarloMachineNode node23 = new MonteCarloMachineNode("Node23");
 
-        MonteCarloMachineNode node30 = new MonteCarloMachineNode("Node30", true);
-        MonteCarloMachineNode node31 = new MonteCarloMachineNode("Node31", true);
-        MonteCarloMachineNode node32 = new MonteCarloMachineNode("Node32", true);
-        MonteCarloMachineNode node33 = new MonteCarloMachineNode("Node33", true);
-        MonteCarloMachineNode node34 = new MonteCarloMachineNode("Node34", true);
-        MonteCarloMachineNode node35 = new MonteCarloMachineNode("Node35", true);
+        MonteCarloMachineNode node30 = new MonteCarloMachineNode("Node30");
+        MonteCarloMachineNode node31 = new MonteCarloMachineNode("Node31");
+        MonteCarloMachineNode node32 = new MonteCarloMachineNode("Node32");
+        MonteCarloMachineNode node33 = new MonteCarloMachineNode("Node33");
+        MonteCarloMachineNode node34 = new MonteCarloMachineNode("Node34");
+        MonteCarloMachineNode node35 = new MonteCarloMachineNode("Node35");
 
         node00.addTransition(0.5f, node10);
         node00.addTransition(0.5f, node11);

@@ -1,19 +1,19 @@
-import org.junit.jupiter.api.Assertions;
+import org.junit.Test;
 
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
-class MonteCarloMachineTest {
+public class MonteCarloMachineTest {
 
-    @org.junit.jupiter.api.Test
-    void run() {
+    @Test
+    public void run() {
         ArrayList<MonteCarloMachineNode> mcmNodes = new ArrayList<MonteCarloMachineNode>();
 
-        MonteCarloMachineNode node00 = new MonteCarloMachineNode("Node00", false);
+        MonteCarloMachineNode node00 = new MonteCarloMachineNode("Node00");
 
-        MonteCarloMachineNode node10 = new MonteCarloMachineNode("Node10", false);
-        MonteCarloMachineNode node11 = new MonteCarloMachineNode("Node11", false);
+        MonteCarloMachineNode node10 = new MonteCarloMachineNode("Node10");
+        MonteCarloMachineNode node11 = new MonteCarloMachineNode("Node11");
 
         node00.addTransition(0.5f, node10);
         node00.addTransition(0.5f, node11);
@@ -27,12 +27,10 @@ class MonteCarloMachineTest {
         assertEquals(mcm.nodes.size(), mcmNodes.size());
     }
 
-    @org.junit.jupiter.api.Test
-    void runEmptyNodes() {
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void runEmptyNodes() {
         ArrayList<MonteCarloMachineNode> mcmNodes = new ArrayList<MonteCarloMachineNode>();
 
         MonteCarloMachine mcm = new MonteCarloMachine(mcmNodes);
-        assertThrows(IndexOutOfBoundsException.class, mcm::run);
     }
-
 }

@@ -1,17 +1,15 @@
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import java.util.ArrayList;
+import static org.junit.Assert.*;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-class MonteCarloMachineNodeTest {
+public class MonteCarloMachineNodeTest {
 
     @Test
-    void addTransition() {
-        MonteCarloMachineNode node00 = new MonteCarloMachineNode("Node00", false);
+    public void addTransition() {
+        MonteCarloMachineNode node00 = new MonteCarloMachineNode("Node00");
 
-        MonteCarloMachineNode node10 = new MonteCarloMachineNode("Node10", false);
-        MonteCarloMachineNode node11 = new MonteCarloMachineNode("Node11", false);
+        MonteCarloMachineNode node10 = new MonteCarloMachineNode("Node10");
+        MonteCarloMachineNode node11 = new MonteCarloMachineNode("Node11");
 
         node00.addTransition(0.5f, node10);
         node00.addTransition(0.5f, node11);
@@ -21,11 +19,11 @@ class MonteCarloMachineNodeTest {
     }
 
     @Test
-    void doTransition() {
-        MonteCarloMachineNode node00 = new MonteCarloMachineNode("Node00", false);
+    public void doTransition() {
+        MonteCarloMachineNode node00 = new MonteCarloMachineNode("Node00");
 
-        MonteCarloMachineNode node10 = new MonteCarloMachineNode("Node10", false);
-        MonteCarloMachineNode node11 = new MonteCarloMachineNode("Node11", false);
+        MonteCarloMachineNode node10 = new MonteCarloMachineNode("Node10");
+        MonteCarloMachineNode node11 = new MonteCarloMachineNode("Node11");
 
         node00.addTransition(0.5f, node10);
         node00.addTransition(0.5f, node11);

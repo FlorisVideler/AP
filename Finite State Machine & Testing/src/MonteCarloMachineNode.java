@@ -5,11 +5,9 @@ public class MonteCarloMachineNode {
     String name;
     Map<Integer, MonteCarloMachineNode> transitions = new HashMap<Integer, MonteCarloMachineNode>();
     Map<Integer, Float> chances = new HashMap<Integer, Float>();
-    boolean endNode;
 
-    public MonteCarloMachineNode(String name, boolean endNode){
+    public MonteCarloMachineNode(String name){
         this.name = name;
-        this.endNode = endNode;
     }
 
     public void addTransition(Float chance, MonteCarloMachineNode node){
