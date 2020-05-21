@@ -73,5 +73,35 @@ public class Main {
             sortedStrings3.add(strings3.poll());
         }
         System.out.println(sortedStrings3);
+
+        //4
+        PriorityQueue<AutoRit> autoRitten = new PriorityQueue<AutoRit>();
+        for(int i = 0; i < 25; i++){
+            AutoRit temp = new AutoRit(r.nextInt(100), r.nextInt(100));
+            autoRitten.add(temp);
+        }
+
+        //Printing autoRitten
+        String autoRittenString = "[";
+        for (AutoRit i : autoRitten){
+            autoRittenString += i.afstand + i.benzineKosten + ", ";
+        }
+        autoRittenString += "]";
+        System.out.println(autoRittenString);
+
+        //Selection sort autoRitten
+        int autoRittenSize = autoRitten.size();
+        PriorityQueue<AutoRit> sortedAutoRitten = new PriorityQueue<AutoRit>();
+        while(sortedAutoRitten.size() != autoRittenSize){
+            sortedAutoRitten.add(autoRitten.poll());
+        }
+
+        //Printing sorted autoRitten
+        String sortedAutoRittenString = "[";
+        for (AutoRit i : sortedAutoRitten){
+            sortedAutoRittenString += i.afstand + i.benzineKosten + ", ";
+        }
+        sortedAutoRittenString += "]";
+        System.out.println(sortedAutoRittenString);
     }
 }
