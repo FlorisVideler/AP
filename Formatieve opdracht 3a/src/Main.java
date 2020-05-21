@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Random;
-import java.util.Stack;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -59,9 +56,22 @@ public class Main {
                 }
             }
         }
-        while (stackDone == false);
+        while (!stackDone);
         System.out.println(strings2);
 
+        //3
+        PriorityQueue<String> strings3 = new PriorityQueue<String>();
+        for(int i = 0; i < 25; i++){
+            strings3.add(String.valueOf((char)(r.nextInt(26) + 'a')));
+        }
+        System.out.println(strings3);
 
+        //Selection sort
+        int queueSize = strings3.size();
+        PriorityQueue<String> sortedStrings3 = new PriorityQueue<String>();
+        while(sortedStrings3.size() != queueSize){
+            sortedStrings3.add(strings3.poll());
+        }
+        System.out.println(sortedStrings3);
     }
 }
