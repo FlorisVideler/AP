@@ -94,5 +94,43 @@ public class Main {
 
         vlucht.unsettled.add(va);
         vlucht.dijkstra();
+
+
+        Reis trein = new Reis();
+        Node ta = new Node("a");
+        Node tb = new Node("b");
+        Node tc = new Node("c");
+        Node td = new Node("d");
+        Node te = new Node("e");
+        Node tf = new Node("f");
+
+        Stap tab = new Treinrit(10, tb);
+        Stap tac = new Treinrit(15, tc);
+
+        Stap tbd = new Treinrit(12, td);
+        Stap tbf = new Treinrit(15, tf);
+
+        Stap tce = new Treinrit(10, te);
+
+        Stap tdf = new Treinrit(1, tf);
+        Stap tde = new Treinrit(2, te);
+
+        Stap tfe = new Treinrit(5, te);
+
+        ta.addEdge(tab);
+        ta.addEdge(tac);
+
+        tb.addEdge(tbd);
+        tb.addEdge(tbf);
+
+        tc.addEdge(tce);
+
+        td.addEdge(tdf);
+        td.addEdge(tde);
+
+        tf.addEdge(tfe);
+
+        trein.unsettled.add(ta);
+        trein.dijkstra();
     }
 }
