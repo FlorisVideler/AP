@@ -8,7 +8,6 @@ public class Node implements Comparable<Node> {
     String name;
     Integer distance = Integer.MAX_VALUE;
     Node source;
-    Node fastestDestination;
     PriorityQueue<Stap> edges = new PriorityQueue();
 
     public Node(String name){

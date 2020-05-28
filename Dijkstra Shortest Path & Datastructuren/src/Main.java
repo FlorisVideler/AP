@@ -84,18 +84,18 @@ public class Main {
         vluchtMap.add(ve);
         vluchtMap.add(vf);
 
-        Stap vab = new Vlucht(10, 100, vb);
-        Stap vac = new Vlucht(15, 100, vc);
+        Stap vab = new Vlucht(10, 10, vb);
+        Stap vac = new Vlucht(15, 0, vc);
 
-        Stap vbd = new Vlucht(12, 100, vd);
-        Stap vbf = new Vlucht(15, 100, vf);
+        Stap vbd = new Vlucht(12, 30, vd);
+        Stap vbf = new Vlucht(15, 23, vf);
 
-        Stap vce = new Vlucht(10, 100, ve);
+        Stap vce = new Vlucht(100, 3, ve);
 
-        Stap vdf = new Vlucht(1, 100, vf);
-        Stap vde = new Vlucht(2, 100, ve);
+        Stap vdf = new Vlucht(1, 44, vf);
+        Stap vde = new Vlucht(2, 58, ve);
 
-        Stap vfe = new Vlucht(5, 100, ve);
+        Stap vfe = new Vlucht(5, 12, ve);
 
         va.addEdge(vab);
         va.addEdge(vac);
