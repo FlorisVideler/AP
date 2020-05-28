@@ -14,7 +14,7 @@ public class Reis {
 
     @Override
     public String toString() {
-        String out = "";
+        String out = "START:\n";
         for (Node n : route){
             out += String.format("%s, %s\n", n.name, n.distance);
         }

@@ -41,7 +41,7 @@ public class Dijkstra {
             route.add(currentNode);
             sourceNode = currentNode.source;
         }while (sourceNode != null);
-        System.out.println("START");
+
 
         return new Reis(route);
     }
