@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
 
-public class Node {
+public class Node implements Comparable<Node> {
     String name;
     Integer distance = Integer.MAX_VALUE;
     Node source;
@@ -19,6 +19,15 @@ public class Node {
         edges.add(stap);
     }
 
-
+    @Override
+    public int compareTo(Node o) {
+        if (o.equals(this)){
+            return 0;
+        } else if(o.distance < this.distance){
+            return 1;
+        }else{
+            return -1;
+        }
+    }
 
 }
